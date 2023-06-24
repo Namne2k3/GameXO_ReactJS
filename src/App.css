@@ -1,5 +1,12 @@
 .App {
   text-align: center;
+  background-color: #597aba;
+  padding: 32px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
 }
 
 .App-logo {
@@ -43,7 +50,6 @@
   height: 100vh;
 }
 #gameContainer {
-  font-family: 'permanent' , cursive ;
   text-align: center; 
   margin: 0 auto; 
 }
@@ -64,5 +70,26 @@
   width: 100%;
 }
 button {
-  padding: 12px 24px;
+  padding: 24px 32px;
+  background-color: #000;
+  color: #fff;
+  border-radius: 12px;
+  outline: none;
+  border: 1px solid;
+  font-size: 1.2rem;
+}
+.status_container {
+  margin-top: 16px;
+  border: 1px solid;
+  margin: 16px auto;
+  max-width: 50%;
+  border-radius: 12px;
+  user-select: none;
+}
+.title_container {
+  border: 1px solid;
+  max-width: 70%;
+  margin: 16px auto;
+  border-radius: 12px;
+  user-select: none;
 }

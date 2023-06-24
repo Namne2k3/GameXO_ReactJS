@@ -1,5 +1,5 @@
 {
-  "homepage": "http://Namne2k3.github.io/gameXo_React",
+  "homepage": "https://Namne2k3.github.io/gameXo_React",
   "name": "game_xo_react",
   "version": "0.1.0",
   "private": true,
@@ -14,7 +14,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "predeply":"npm run build",
+    "predeploy":"npm run build",
     "deploy":"gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",

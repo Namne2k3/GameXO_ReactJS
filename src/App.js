@@ -1,11 +1,8 @@
-import logo from './logo.svg';
 import './App.css';
-
 import React from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
 function GameXO () {
-
   const cells = document.querySelectorAll('.cell');
   const winConditions = [
     [ 0 , 1 , 2 ] ,
@@ -22,7 +19,7 @@ function GameXO () {
   const [running,setRunning] = useState(false);
   const [playerTurn,setPlayerTurn] = useState("");
   const [roundWon,setRoundWon] = useState(false);
-  
+
   useEffect( () => {
     runGame();
   },[])
@@ -35,12 +32,16 @@ function GameXO () {
   }
 
   const changePlayer = () => {
+    console.log(currentPlayer)
+    let tempCurrentPlayer = currentPlayer ; 
     if ( currentPlayer === "X" ) {
       setCurrentPlayer("O")
-    } else {
+      tempCurrentPlayer = "O"
+    } else if ( currentPlayer === "O") {
       setCurrentPlayer("X")
+      tempCurrentPlayer = "X"
     }
-    setPlayerTurn(currentPlayer + "'s turn");
+    setPlayerTurn(tempCurrentPlayer + "'s turn");
   }
 
   const checkWinner = () => {
@@ -72,39 +73,43 @@ function GameXO () {
   }
 
   const cellClicked = (e) => {
-    const cellIndex = e.target.getAttribute("cellIndex") ; 
-    if ( options[cellIndex] !== "" || !running ) 
+    const cellindex = e.target.getAttribute("cellindex") ; 
+    if ( options[cellindex] !== "" || !running ) 
       return ; 
-    updateCell(e.target,cellIndex)
-    checkWinner() ;
+    updateCell(e.target,cellindex)
+    checkWinner();
   }
   const restartGame = () => {
     setCurrentPlayer("X");
+    setPlayerTurn(currentPlayer + "'s turn");
     cells.forEach( cell => cell.textContent = "" ) ;
     setOptions([ "" , "" , "" , "" , "" , "" , "" , "" , "" ]);
-    setPlayerTurn(currentPlayer + "'s turn");
     setRunning(true);
   }
   const runGame = () => {
     setCurrentPlayer("X");
-    setPlayerTurn(currentPlayer + "'s turn");
+    setPlayerTurn("X's turn");
     setRunning(true);
   }
   return(
     <div id="gameContainer">
+      <div className='title_container'>
         <h1>Game XO</h1>  
+      </div>
         <div id="cellContainer">
-            <div onClick={cellClicked} cellIndex="0" className="cell"></div>
-            <div onClick={cellClicked} cellIndex="1" className="cell"></div>
-            <div onClick={cellClicked} cellIndex="2" className="cell"></div>
-            <div onClick={cellClicked} cellIndex="3" className="cell"></div>
-            <div onClick={cellClicked} cellIndex="4" className="cell"></div>
-            <div onClick={cellClicked} cellIndex="5" className="cell"></div>
-            <div onClick={cellClicked} cellIndex="6" className="cell"></div>
-            <div onClick={cellClicked} cellIndex="7" className="cell"></div>
-            <div onClick={cellClicked} cellIndex="8" className="cell"></div>
+            <div onClick={cellClicked} cellindex="0" className="cell"></div>
+            <div onClick={cellClicked} cellindex="1" className="cell"></div>
+            <div onClick={cellClicked} cellindex="2" className="cell"></div>
+            <div onClick={cellClicked} cellindex="3" className="cell"></div>
+            <div onClick={cellClicked} cellindex="4" className="cell"></div>
+            <div onClick={cellClicked} cellindex="5" className="cell"></div>
+            <div onClick={cellClicked} cellindex="6" className="cell"></div>
+            <div onClick={cellClicked} cellindex="7" className="cell"></div>
+            <div onClick={cellClicked} cellindex="8" className="cell"></div>
         </div>
-        <h2 id="statusText">{playerTurn}</h2>
+        <div className="status_container">
+          <h2 id="statusText">{playerTurn}</h2>
+        </div>
         <button onClick={restartGame} className="btn btn-info" id="restartBtn">Restart</button>
     </div>
   );
@@ -112,7 +117,9 @@ function GameXO () {
 
 function App() {
   return (
-    <GameXO />
+    <div className="App">
+      <GameXO />
+    </div>
   );
 }
 
