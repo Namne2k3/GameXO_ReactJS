@@ -50,6 +50,7 @@
   height: 100vh;
 }
 #gameContainer {
+  position: relative;
   text-align: center; 
   margin: 0 auto; 
 }
@@ -77,6 +78,9 @@ button {
   outline: none;
   border: 1px solid;
   font-size: 1.2rem;
+  cursor: pointer;
+  width: 130px;
+  user-select: none;
 }
 .status_container {
   margin-top: 16px;
@@ -92,4 +96,17 @@ button {
   margin: 16px auto;
   border-radius: 12px;
   user-select: none;
+}
+.menu-options {
+  margin-top: 12px;
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-content: center;
+}
+.btn_pvc.active {
+  background-color: rgb(40, 109, 40);
+}
+.btn_pvc {
+  background-color: rgb(154, 47, 2);
 }
