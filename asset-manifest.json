@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/GameXO_ReactJS/static/css/main.b99fea99.css",
+    "main.js": "/GameXO_ReactJS/static/js/main.1469bdfa.js",
+    "static/js/787.71440071.chunk.js": "/GameXO_ReactJS/static/js/787.71440071.chunk.js",
+    "index.html": "/GameXO_ReactJS/index.html",
+    "main.b99fea99.css.map": "/GameXO_ReactJS/static/css/main.b99fea99.css.map",
+    "main.1469bdfa.js.map": "/GameXO_ReactJS/static/js/main.1469bdfa.js.map",
+    "787.71440071.chunk.js.map": "/GameXO_ReactJS/static/js/787.71440071.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b99fea99.css",
+    "static/js/main.1469bdfa.js"
+  ]
+}
